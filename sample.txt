@@ -1,0 +1,4 @@
+var imageBuffer = new Buffer(req.body.base64, 'base64');
+    fs.writeFile('image.pdf', imageBuffer, function (err) {
+        console.log('File created');
+    });
