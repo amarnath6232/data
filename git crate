@@ -1,0 +1,6 @@
+echo "# node" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/amarnath6232/node.git
+git push -u origin master
