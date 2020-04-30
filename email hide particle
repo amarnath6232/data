@@ -1,0 +1,7 @@
+// Email manipulation
+  const indexAt = email.lastIndexOf("@");
+  email.slice(2, indexAt - 2);
+  const match = email.slice(2, indexAt - 2);
+  const repeat = "x".repeat(match.length);
+  const ReplaceEmail = email.replace(match, repeat);
+// Email manipulation End 
