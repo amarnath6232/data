@@ -8,3 +8,10 @@ git push -u origin master
 
 // remove node_modules
 git rm -r --cached node_modules
+
+// remove last commit in local
+git reset --hard HEAD~{parms}
+Ex: git reset --hard HEAD~1
+
+// remove last commit in remote
+git push -f origin HEAD^:{branch}
