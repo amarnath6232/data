@@ -15,3 +15,21 @@ Ex: git reset --hard HEAD~1
 
 // remove last commit in remote
 git push -f origin HEAD^:{branch}
+
+
+// commit id to new branch starts
+Go to commit id
+
+git commit <commit id>
+
+change the requirement and commit (new commit id generated)
+
+git branch <new branch> <new commit id>
+
+git add .
+
+git commit -m "msg"
+
+git checkout <new branch>
+
+// commit id to new branch ends
