@@ -1,0 +1,27 @@
+FirstName: ['', [Validators.required, Validators.minLength(3), Validators.pattern("^(?=.{1,30}$)[a-zA-Z]+([ ]?|[a-zA-Z]+['-]?)+$")]],
+LastName: ['', [Validators.minLength(1), Validators.pattern("^(?=.{1,30}$)[a-zA-Z]+([ ]?|[a-zA-Z]+['-]?)+$")]],
+PhoneNo: ['', [Validators.required, Validators.minLength(10)]],
+EmailId: ['', [Validators.required, Validators.minLength(6), Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$')]],
+EmailId1: ['', [Validators.minLength(6), Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$')]],
+EmailId2: ['', [Validators.minLength(6), Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9 .-]+\.[a-z]{2,4}$')]],
+DateOfBirth: ['', Validators.required],
+CountryId: ['3', Validators.required],
+UserCity: ['', [Validators.required, Validators.pattern("^(?=.{1,20}$)[a-zA-Z.']+([ ]?|[a-zA-Z.']+[',.]?)+$")]],
+AddressLine1: ['', [Validators.required, Validators.pattern("^(?=.{1,200}$)[a-zA-Z0-9#.,'-0-9]([ ]?|[a-zA-Z0-9#.,'-]?)+$")]],
+AddressLine2: ['', [Validators.pattern("^(?=.{1,200}$)[a-zA-Z0-9#.,'-0-9]([ ]?|[a-zA-Z0-9#.,'-]?)+$")]],
+ProvinceId: ['', Validators.required],
+PostalCode: ['', [Validators.required, Validators.pattern("^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$")]],
+OccupationId: ['', Validators.required]
+
+*****************************************************
+
+this.registerForm = this.formBuilder.group({
+      countryId: ['', Validators.required],
+      firstName: ['', [Validators.required, Validators.pattern("^(?=.{1,30}$)[a-zA-Z]+([ ]?|[a-zA-Z]+['-]?)+$")]],
+      lastName: ['', [Validators.required, Validators.pattern("^(?=.{1,30}$)[a-zA-Z]+([ ]?|[a-zA-Z]+['-]?)+$")]],
+      emailId: ['', [Validators.required, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,4}$")]],
+      userPassword: ['', [Validators.required, PasswordStrength]],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: MustMatch('userPassword', 'confirmPassword')
+    });
